@@ -1,8 +1,7 @@
-import FeaturedProjects from "./components/home/FeaturedProjects";
-import HeroSection from "./components/home/HeroSection";
-import ServicesOverview from "./components/home/ServicesOverview";
-import Testimonials from "./components/home/Testimonials";
-
+import HeroSection from '@/components/home/HeroSection';
+import FeaturedProjects from '@/components/home/FeaturedProjects';
+import ServicesOverview from '@/components/home/ServicesOverview';
+import Testimonials from '@/components/home/Testimonials';
 
 export default function Home() {
   return (
