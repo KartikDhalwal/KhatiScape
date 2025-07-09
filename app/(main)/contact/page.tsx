@@ -2,8 +2,6 @@
 import SectionTitle from "@/app/components/ui/SectionTitle";
 import { useState } from "react";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import { motion } from "framer-motion";
-import { FaPaperPlane } from "react-icons/fa";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
