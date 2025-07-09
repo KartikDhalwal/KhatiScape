@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true, // Disables TypeScript errors during build
   },
+  output: 'standalone',
    webpack: (config) => {
     config.resolve.alias["@"] = path.resolve(__dirname);
     return config;

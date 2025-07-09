@@ -1,9 +1,12 @@
 import ServicesOverview from "@/app/components/home/ServicesOverview";
+export const dynamic = 'force-dynamic';
 
-export default function ServicesPage() {
+const ServicesPage = () => {
   return (
     <div className="mt-20">
-      <ServicesOverview />;
+      <ServicesOverview />
     </div>
   );
 }
+
+export default ServicesPage
