@@ -15,10 +15,11 @@ export const projects = [
       'Rooftop garden'
     ],
     images: [
-      '/images/projects/villa-1.jpg',
-      '/images/projects/villa-2.jpg',
-      '/images/projects/villa-3.jpg',
-    ]
+      '/A serene and modern bedroom designed in soft pastel tones. The sleek floor-to-ceiling wardrobe feature.jpg',
+      '/A modern, cozy bedroom with a central king-sized bed featuring a padded beige headboard and neatly arr (1).jpg',
+      '/A stylish and modern bedroom interior featuring a sleek TV wall unit. The center of the wall has a fla.jpg',
+    ],
+    imageUrl:"ChatGPT Image Jul 8, 2025, 03_07_59 PM.png"
   },
   // Add more projects...
 ];

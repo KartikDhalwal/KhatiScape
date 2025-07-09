@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section className="relative h-screen flex items-center justify-center bg-gray-100">
       <div className="absolute inset-0">
         <Image
-          src="/carosal_4.jpg"
+          src="/hom1.png"
           alt="Luxury interior design"
           fill
           className="object-cover"

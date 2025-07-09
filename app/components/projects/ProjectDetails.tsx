@@ -15,7 +15,7 @@ export default function ProjectDetails({
 }: ProjectDetailsProps) {
   return (
     <div>
-      <h2 className="text-2xl font-serif font-bold mb-6">Project Details</h2>
+      <h2 className="text-2xl font-serif font-bold mb-6 text-amber-800">Project Details</h2>
       <p className="text-gray-700 mb-8">{description}</p>
       
       <div className="grid grid-cols-2 gap-6 mb-8">

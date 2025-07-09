@@ -4,11 +4,18 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars } from "react-icons/fa";
 import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-
+  const [textColour, setTextColour] = useState<boolean>(false);
+  useEffect(() => {
+    const segments = location.pathname.split("/").filter(Boolean);
+    if (segments.length > 0) {
+      setTextColour(true);
+    }
+  }, [location?.pathname]);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -47,47 +54,33 @@ export default function Header() {
                 ? "translate-y-0"
                 : "-translate-y-full md:translate-y-0"
             } ${
-              !scrolled ? "text-white" : "text-gray-700 hover:text-blue-600"
+              !scrolled && !textColour
+                ? "text-white"
+                : "text-gray-700 hover:text-amber-600"
             }`}
           >
             <li>
-              <Link
-                href="#home"
-                onClick={closeMobileMenu}
-              >
+              <Link href="/" onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                href="#about"
-                onClick={closeMobileMenu}
-              >
+              <Link href="about" onClick={closeMobileMenu}>
                 About Us
               </Link>
             </li>
             <li>
-              <Link
-                href="#services"
-                onClick={closeMobileMenu}
-              >
+              <Link href="services" onClick={closeMobileMenu}>
                 Services
               </Link>
             </li>
             <li>
-              <Link
-                href="#contact"
-                onClick={closeMobileMenu}
-              >
+              <Link href="contact" onClick={closeMobileMenu}>
                 Contact Us
               </Link>
             </li>
             <li>
-              <Link
-                href="/architecture"
-              >
-                Architecture
-              </Link>
+              <Link href="blog">Blog</Link>
             </li>
           </ul>
           <div

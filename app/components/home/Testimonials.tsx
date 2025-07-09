@@ -19,10 +19,10 @@ export default function Testimonials() {
     <section className="py-20 bg-amber-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4">
+          <h2 className="text-3xl text-amber-900 md:text-4xl font-serif font-bold mb-4">
             Client Testimonials
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-amber-800 max-w-2xl mx-auto">
             Hear what our clients say about our work and service
           </p>
         </div>

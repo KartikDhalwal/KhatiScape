@@ -6,7 +6,7 @@ export default function ProjectsPage() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+          <h1 className="text-4xl text-amber-800 md:text-5xl font-serif font-bold mb-4">
             Our Portfolio
           </h1>
           <p className="text-gray-600 max-w-2xl mx-auto">

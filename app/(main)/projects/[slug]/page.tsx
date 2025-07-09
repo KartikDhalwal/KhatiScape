@@ -17,7 +17,7 @@ export default function ProjectPage({
   return (
     <div className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <h1 className="text-3xl md:text-4xl font-serif font-bold mb-2">
+        <h1 className="text-3xl md:text-4xl text-amber-900 font-serif font-bold mb-2">
           {project.title}
         </h1>
         <p className="text-amber-600 text-lg mb-8">{project.category}</p>

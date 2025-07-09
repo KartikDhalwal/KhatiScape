@@ -20,11 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="font-sans text-gray-800">
-        <Header />
         <main className="min-h-[calc(100vh-160px)]">
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );
