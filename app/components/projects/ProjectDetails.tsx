@@ -18,7 +18,7 @@ export function ProjectDetails({
       <h2 className="text-xl sm:text-2xl font-serif font-bold mb-4 sm:mb-6 text-amber-800">Project Details</h2>
       <p className="text-gray-700 mb-6 sm:mb-8 text-base sm:text-lg leading-relaxed">{description}</p>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
         <div className="bg-gray-50 p-4 rounded-lg">
           <h3 className="font-serif font-semibold text-gray-800 mb-1">Location</h3>
           <p className="text-gray-600">{location}</p>
@@ -31,7 +31,7 @@ export function ProjectDetails({
           <h3 className="font-serif font-semibold text-gray-800 mb-1">Completed</h3>
           <p className="text-gray-600">{completed}</p>
         </div>
-      </div>
+      </div> */}
       
       <div>
         <h3 className="font-serif font-semibold text-gray-800 mb-3 sm:mb-4 text-lg">Key Features</h3>
