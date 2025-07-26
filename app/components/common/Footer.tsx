@@ -1,11 +1,37 @@
+"use client";
+
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { useEffect, useState } from "react";
+import { GoMoveToTop } from "react-icons/go";
 
 export default function Footer() {
+  const [showTopBtn, setShowTopBtn] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowTopBtn(true);
+      } else {
+        setShowTopBtn(false);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const goToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
-    <footer className="bg-amber-100 text-white py-12">
+    <footer className="relative bg-amber-100 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* ===== Column 1 ===== */}
           <div>
             <h3 className="text-xl font-serif font-bold mb-4 text-amber-900">
               KhatiScape
@@ -15,6 +41,7 @@ export default function Footer() {
             </p>
           </div>
 
+          {/* ===== Quick Links ===== */}
           <div>
             <h4 className="font-serif font-semibold mb-4 text-amber-900">
               Quick Links
@@ -55,6 +82,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* ===== Services ===== */}
           <div>
             <h4 className="font-serif font-semibold mb-4 text-amber-900">
               Services
@@ -103,6 +131,7 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* ===== Connect ===== */}
           <div>
             <h4 className="font-serif font-semibold mb-4 text-amber-900">
               Connect
@@ -120,9 +149,6 @@ export default function Footer() {
               >
                 <Instagram size={20} />
               </Link>
-              {/* <Link href="https://www.instagram.com/khatiscape_architects_interior?igsh=MTRoMWtxMXhhbWNjOQ==" className="text-gray-600 hover:text-black transition">
-                <Twitter size={20} />
-              </Link> */}
               <Link
                 href="https://www.linkedin.com/company/khatiscape-architects-and-interior/"
                 className="text-gray-600 hover:text-black transition"
@@ -147,6 +173,16 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      {/* ===== Go To Top Button ===== */}
+      {showTopBtn && (
+        <button
+          onClick={goToTop}
+          className="fixed bottom-6 right-6 bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-transform transform hover:scale-110"
+        >
+          <GoMoveToTop/>
+        </button>
+      )}
     </footer>
   );
 }

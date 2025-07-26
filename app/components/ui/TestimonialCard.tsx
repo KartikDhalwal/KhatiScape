@@ -23,7 +23,7 @@ export default function TestimonialCard({
         </div>
         <div>
           <h4 className="font-serif  text-amber-900 font-bold">{name}</h4>
-          <p className="text-gray-600 text-sm">{role}</p>
+          {/* <p className="text-gray-600 text-sm">{role}</p> */}
         </div>
       </div>
       <p className="text-gray-700 italic">"{content}"</p>

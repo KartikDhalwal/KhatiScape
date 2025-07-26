@@ -57,7 +57,7 @@ export default function Header() {
         !target.closest(".mobile-menu") &&
         !target.closest(".menu-toggle")
       ) {
-        closeMobileMenu('');
+        closeMobileMenu("");
       }
     };
 
@@ -73,14 +73,16 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex h-[10%]">
-          <Image
-            src="/logo-05.png"
-            alt="Company Logo"
-            width={200}
-            height={108}
-            className="lg:-ml-[75%]"
-            priority
-          />
+          <Link href="/" className="cursor-pointer">
+            <Image
+              src="/logo-05.png"
+              alt="Company Logo"
+              width={200}
+              height={108}
+              className="lg:-ml-[75%]"
+              priority
+            />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -105,7 +107,7 @@ export default function Header() {
         <nav className="hidden md:block">
           <ul
             className={`flex items-center gap-6 md:gap-8 ${
-              !scrolled && !textColour ? "text-white" : "text-gray-700"
+              !scrolled && !textColour ? "text-white" : "text-black"
             }`}
           >
             <li

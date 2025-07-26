@@ -2,6 +2,7 @@
 import SectionTitle from "@/app/components/ui/SectionTitle";
 import { useState } from "react";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import Swal from "sweetalert2";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
+    location: "",
   });
   const [submitStatus, setSubmitStatus] = useState<any>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,10 +37,14 @@ export default function ContactPage() {
         },
         body: JSON.stringify(formData),
       });
-      console.log({ res });
       if (res.ok) {
-        alert("success");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        await Swal.fire({
+          icon: "success",
+          title: "Thanks for Believing in Us",
+          text: "Our Team will Contact you soon.",
+          confirmButtonText: "OK",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "", location:"" });
       } else {
         setSubmitStatus("error");
       }
@@ -53,6 +59,7 @@ export default function ContactPage() {
       email: "",
       phone: "",
       message: "",
+      location:""
     });
   };
 
@@ -152,12 +159,26 @@ export default function ContactPage() {
                   type="tel"
                   id="phone"
                   name="phone"
+                  required
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
               </div>
-
+              <div>
+                <label htmlFor="location" className="block text-gray-700 mb-2">
+                  Your Location ?
+                </label>
+                <input
+                  type="location"
+                  id="text"
+                  name="location"
+                  value={formData.location}
+                  onChange={handleChange}
+                  className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  required
+                />
+              </div>
               <div>
                 <label htmlFor="message" className="block text-gray-700 mb-2">
                   Your Message
