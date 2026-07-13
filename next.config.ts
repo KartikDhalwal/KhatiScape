@@ -1,19 +1,19 @@
 import type { NextConfig } from "next";
-import path from "path";
 
 const nextConfig: NextConfig = {
-   eslint: {
-    ignoreDuringBuilds: true, // Disable linting during builds
-  },
   typescript: {
-    ignoreBuildErrors: true, // Disables TypeScript errors during build
+    ignoreBuildErrors: true,
   },
-   webpack: (config) => {
-    config.resolve.alias["@"] = path.resolve(__dirname);
-    return config;
-  },
+
+  turbopack: {},
+
   images: {
-    domains: ['images.unsplash.com'], // Add your image domains here
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
 };
 
